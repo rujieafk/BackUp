@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Sign up";
+}
+
+<form class="Registercontainer" method="post">
+    <div class="SignupForm">
+        <h1>Register</h1>
+        <h5>Signup now and get full access to our app.</h5>
+        <div class="user-input-box">
+            <div class="grid-fullname">
+                <input name="Acc_FirstName" class="InputTextbox" type="text" placeholder="Firstname" required/>
+                <input name="Acc_MiddleName" class="InputTextbox" type="text" placeholder="Middlename" required />
+                <input name="Acc_LastName" class="InputTextbox" type="text" placeholder="Lastname" required />
+            </div>
+        </div>
+        <div class="user-input-box">
+            <input name="Acc_DisplayName" class="InputTextbox1" type="text" placeholder="Display Name" required />
+        </div>
+        <div class="user-input-box">
+            <h6>Birthdate</h6>
+            <div class="grid-fullname">
+                <input name="Acc_Birthdate" class="InputTextbox1" type="text" placeholder="January 01, 2001" required />
+                <input name="Acc_PhoneNum" class="InputTextbox1" type="tel" placeholder="Phone Number" required />
+                <input name="Acc_Address" class="InputTextbox1" type="text" placeholder="Address" required />
+            </div>
+        </div>
+        <div class="user-input-box">
+            <div class="grid-fullname">
+                <input name="Acc_Email" class="InputTextbox" type="email" placeholder="Username" required />
+                <div class="password-container">
+                    <input name="Acc_Password" class="password-text" type="password" placeholder="Password" required />
+                    <span class="toggle-password" id="togglePassword">
+                        <img src="~/image/visible.png" id="showIcon" class="show-icon" />
+                        <img src="~/image/hide.png" class="hide-icon" id="hideIcon" />
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="user-input-box">
+            <button type="submit" class="myButton">Submit</button>
+        </div>
+        <p class="p_button">Already have an account? <a class="a_button" asp-controller="Account" asp-action="Login">Login</a></p>
+    </div>
+</form>
+

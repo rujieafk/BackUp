@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "User's Payment Log";
+}
+<div class="hiveuser">
+    <h1>Login History</h1>
+    <div class="hiveuser-border">
+        <div class="hiveuser-content">
+            <a href="#" class="content-items">All Date</a>
+            <div class="search-border">
+                <input class="search-input" type="text" placeholder="Type here...">
+                <button class="search-button"><img src="~/image/search.png" class="search-logo" /></button>
+            </div>
+            <a asp-controller="Home" asp-action="HiveUserList"><img src="~/image/close.png" class="back-close-botton" /></a>
+        </div>
+        <div class="hiveuser-header-item">
+            <h5>Payment</h5>
+            <h5>Date</h5>
+            <h5>Rental Type</h5>
+            <h5>Rental ID</h5>
+            <h5>Rental Starts</h5>
+            <h5>Rental Ends</h5>
+            <h5>Advance payment</h5>
+            <h5>Pay Date</h5>
+        </div>
+        <div class="hiveuser-message">
+            <p>P10000</p>
+            <p>01-01-2023</p>
+            <p>Appartment</p>
+            <p>123456</p>
+            <p>01-01-2023</p>
+            <p>01-01-2023</p>
+            <p>P0</p>
+            <p>01-01-2023</p>
+        </div>
+    </div>
+</div>

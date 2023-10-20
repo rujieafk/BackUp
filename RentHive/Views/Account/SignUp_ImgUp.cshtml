@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Almost There!";
+}
+<div class="SignupForm">
+    <h1>Almost there!</h1>
+    <h5>For security reason we require every user to submit any Valid ID/ Government ID</h5>
+    <div>
+        <div class="UploadImageBox">
+            <input class="ImageText" type="url" placeholder="Upload an image" />
+            <button class="buttonImage"><img class="iconImage" src="~/image/addphoto.png" /></button>
+        </div>
+        <div style="text-align:center; margin-top:20px;">
+            <button class="btnProceed" onclick="location.href='@Url.Action("Login","Account")'" type="submit">Proceed</button>
+        </div>
+    </div>
+</div>

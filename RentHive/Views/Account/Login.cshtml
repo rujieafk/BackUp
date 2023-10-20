@@ -1,0 +1,34 @@
+﻿@model RentHive.Models.userLogin
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="fade-in">
+    <div class="Logincontainer">
+        <div>
+            <img src="~/image/logo2.png" class="Loginlogo" />
+            <p class="text">Welcome to RentHive.</p>
+        </div>
+        <div class="LoginForm">
+            <h1>Login</h1>
+            <form method="POST">
+                <div class="CenterTextbox">
+                    <input name="Acc_Email" class="InputTextbox" placeholder="Username" value="rujie@gmail.com" required/>
+                </div>
+                <div class="password-container">
+                    <input name="Acc_Password" class="password-text" type="password" placeholder="Password" value="rujie12345" required />
+                    <span class="toggle-password" id="togglePassword">
+                        <img src="~/image/visible.png" id="showIcon" class="show-icon" />
+                        <img src="~/image/hide.png" class="hide-icon" id="hideIcon" />
+                    </span>
+                </div>
+                <div>
+                    <a class="_forgetpass" asp-controller="Account" asp-action="ForgetPassword">Forget Password?</a>
+                </div>
+                <div>
+                    <button type="submit" class="myButton">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

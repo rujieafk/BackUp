@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+<div>
+    <div class="side-nav">
+        <div class="user">
+            <a href="@Url.Action("Profile", "System",new { TempuserId = ViewBag.Acc_id })">
+                <img src="~/image/user.png" class="user-img" />
+            </a>
+            <div class="text-name">
+                <h2>@ViewBag.Acc_Email</h2>
+                <p>@ViewBag.Acc_UserType</p>
+            </div>
+        </div>
+        <ul class="menu-list">
+            <li class="menu-item-active"><img class="menu-icon" src="~/image/dashboard.png" /><a asp-controller="Home" asp-action="Index" class="menu-text">Dashboard</a></li>
+            <li class="menu-item"><img class="menu-icon" src="~/image/file.png" /><a asp-controller="Home" asp-action="Report" class="menu-text">Reports</a></li>
+            <li class="menu-item"><img class="menu-icon" src="~/image/group.png" /><a asp-controller="Home" asp-action="HiveUserVerification" class="menu-text">User</a></li>
+            <li class="menu-item"><img class="menu-icon" src="~/image/rent.png" /><a asp-controller="Home" asp-action="RentalServices" class="menu-text">Rental Servies</a></li>
+        </ul>
+        <ul class="menu-list">
+            <li class="menu-item"><img class="menu-icon" src="~/image/logout.png" /><a asp-controller="Home" asp-action="Login" class="menu-text">Logout</a></li>
+        </ul>
+    </div>
+
+    <div>
+        <button class="notification-button" onclick="location.href='@Url.Action("Notification","System")'"><img class="notification-icon" src="~/image/bell.png"></button>
+    </div>
+</div>
+

@@ -1,0 +1,839 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    font-family: 'Arial Rounded MT';
+    background-color: #313538;
+    color:white;
+}
+/*Default Side navbar*/
+/*Background of navbar*/
+.side-nav {
+    width: 4%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(246,186,77, 0.2); /*ilisi ang color*/
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    transition: width 0.5s;
+}
+
+    .side-nav:hover {
+        width: 200px;
+    }
+
+        .side-nav:hover .user {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid grey;
+        }
+
+        .side-nav:hover .user-img {
+            margin:auto;
+            width: 50px;
+        }
+
+        .side-nav:hover .menu-text {
+            display: block;
+        }
+
+        .side-nav:hover .menu-item {
+            justify-content: flex-start;
+        }
+
+        .side-nav:hover .menu-item-active {
+            justify-content: flex-start;
+            border-bottom: 1px solid;
+        }
+/*holds the img profile, name, username, img edit*/
+.user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50px;
+    font-size: 12px;
+    padding: 5px;
+    overflow: hidden;
+}
+/*img profile style*/
+.user-img {
+    width: 40px;
+    border-radius: 50%;
+    margin-right: auto;
+    margin-left: 2px;
+}
+/*text style*/
+.text-name {
+    margin-top: 20px;
+    padding-left: 5px;
+    margin-right: 20px;
+}
+
+.user h2 {
+    font-size: 20px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.menu-list {
+    list-style: none;
+    padding: 0 15px;
+    margin: auto;
+}
+
+.menu-item {
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+    .menu-item:hover {
+        background: red; /*ilisssssssssssssssssssiiiiiiii*/
+    }
+.menu-item-active {
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.menu-icon {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.menu-text {
+    white-space: nowrap;
+    display: none;
+    color: white;
+    text-decoration: none;
+}
+    .menu-text:hover{
+        color: white; /*sampleeeeeeeeeeeeeeeeeeeeee*/
+    }
+
+/*size of the Logo; list of cshtml who use .logo (WelcomePage,Login) */
+.logo {
+    width: 30%;
+    min-width: 200px;
+}
+.delete-logo-size {
+    width: 20%;
+    min-width: 150px;
+    margin-top: 50px;
+}
+.delete-logo{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    margin: 50px auto 0px auto ;
+    width: 70%;
+}
+.ForgetPassword-border {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    width: 70%;
+}
+/*making the logo center; list of cshtml who use .CenterLogo (WelcomePage)*/
+.CenterLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20vh;
+}
+/*making the text center; list of cshtml who use .message (WelcomePage, ForgetPassword)*/
+.message {
+    margin-top: 10px;
+    font-size: 50px;
+    color: white;
+    text-align: center;
+}
+/*list of cshmtl who use .InputTextbox (Login,Signup,Forgetpass)*/
+.InputTextbox {
+    font-size: 20px;
+    color: white;
+    border: 1px solid #E2A848;
+    padding: 5px 5px 5px 10px;
+    background-color: transparent;
+    border-radius: 30px;
+    width: 100%;
+    min-width: 200px;
+}
+/*list of cshmtl who use .CenterTextbox (Login,ForgetPassword)*/
+.CenterTextbox {
+    padding: 5px;
+    width: 100%;
+}
+/*Text typing animation (register and login is using this animation)*/
+.text {
+    margin-top: 10px;
+    font-size: 2em;
+    border-right: 5px solid;
+    letter-spacing: 5px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 2s steps(20),cursor .4s step-end infinite alternate;
+}
+
+@keyframes cursor {
+    50% {
+        border-color: transparent
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+}
+/*Animation for WelcomePage*/
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+    #fade-out {
+        animation: fadeOut 2s ease-in-out forwards;
+    }
+
+/*Login.cshtml stylesheet*/
+/*Animation for Login*/
+.password-container {
+    position: relative;
+    font-size: 20px;
+    color: white;
+    border: 1px solid #E2A848;
+    background-color: transparent;
+    border-radius: 30px;
+    width: 98%;
+    text-align: center;
+    margin-left: 5px
+}
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 50px;
+    cursor: pointer;
+    left: 89%;
+    width: 8%;
+}
+.show-icon {
+    width: 30px;
+    height: 30px;
+}
+.hide-icon {
+    display: none;
+    width: 30px;
+    height: 30px;
+}
+.password-text {
+    font-size: 20px;
+    color: white;
+    padding: 5px 5px 5px 10px;
+    background-color: transparent;
+    border-radius: 30px;
+    width: 100%;
+    min-width: 200px;
+    border: none;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+    .fade-in {
+        animation: fadeIn 1s ease-in-out;
+    }
+/*Holds the logo and login form*/
+.Logincontainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 25vh;
+}
+.Loginlogo {
+    width: 100%;
+    max-width: 200px;
+}
+/*Border for LoginForm*/
+.LoginForm {
+    margin-left: 100px;
+    border: 1px solid #E2A848;
+    padding: 20px;
+    border-radius: 20px;
+}
+/*being use by Login.cshtml, Signup.cshtml*/
+.myButton {
+    margin: auto;
+    color: white;
+    border: 1px solid #F9B54A;
+    background-color: #F9B54A;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    font-size: 25px;
+    width: 30vw;
+    text-decoration:none;
+}
+    .myButton:hover {
+        background-color: transparent;
+        border: 1px solid #F9B54A;
+        color: #F9B54A;
+    }
+/*Text forgot password*/
+._forgetpass {
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 15px;
+    padding-bottom: 10px;
+    color: #E4A948;
+}
+    ._forgetpass:hover {
+        color: white;
+    }
+/*Text Not a member*/
+.p_button {
+    padding: 5px;
+    color: white;
+}
+/*Register Now text button*/
+.a_button {
+    text-decoration: none;
+    color: #E4A948;
+}
+    .a_button:hover {
+        text-decoration: 2px underline #F9B54A;
+        color: white;
+    }
+
+/*Signup.cshtml stylesheet*/
+/*Holds the Register form*/
+.Registercontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+}
+/*Border for Signup Form*/
+.SignupForm {
+    margin-top:10vh;
+    border: 1px solid #E2A848;
+    padding: 20px;
+    border-radius: 20px;
+}
+/*Spacing of the textbox for firstname and lastname*/
+.grid-fullname {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+/*spacing for each textbox in form*/
+.user-input-box {
+    padding: 5px;
+}
+.UploadImageBox {
+    margin: auto;
+    width: 25vw;
+    background-color: white;
+    border-radius: 25px;
+    text-align: center;
+}
+.ImageText {
+    border: none;
+    width: 225px;
+}
+.buttonImage {
+    background-color: transparent;
+    border: none;
+}
+.iconImage {
+    width: 40px;
+    height: 40px;
+}
+.btnProceed {
+    font-size: 15px;
+    color: white;
+    border: 1px solid #E4A948;
+    padding: 5px;
+    background-color: #E4A948;
+    border-radius: 30px;
+    width: 15vw;
+}
+    .btnProceed:hover {
+        border: 1px solid #E4A948;
+        background-color: transparent;
+        color: #E4A948
+    }
+.InputTextbox1 {
+    font-size: 20px;
+    color: white;
+    border: 1px solid #E2A848;
+    padding: 5px 5px 5px 10px;
+    background-color: transparent;
+    border-radius: 30px;
+    width: 50%;
+    min-width: 200px;
+}
+/*ForgetPassword Stylesheet*/
+.ForgetPassword-border {
+    width: 50%;
+    margin: 20px auto auto auto;
+    border: 1px solid #E2A848;
+    padding: 20px;
+    border-radius: 20px;
+}
+/*Default Spacing Stylesheet*/
+.notification, .report, .hiveuser {
+    margin-top: 5vh;
+}
+/*Default border*/
+.report-border, .hiveuser-border {
+    border: 1px solid #F9B54A;
+    border-radius: 20px;
+    padding: 20px;
+    width: 100%;
+    height: 500px;
+}
+/*------------------Start------------------*/
+/*Default text spacing*/
+.report-header-item, .hiveuser-header-item {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid;
+    text-align: left;
+}
+    .report-header-item h5, .hiveuser-header-item h5 {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        text-align: left;
+    }
+.report-message, .hiveuser-message {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+    .report-message p, .hiveuser-message p {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        text-align: left;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+/*------------------End------------------*/
+
+/*Dashboard stylesheet*/
+/*notificaiton button*/
+.notification-button {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 0;
+    height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.notification-icon {
+    width: 30px;
+    height: 30px;
+}
+/*Notification Stylesheet*/
+.notification-border {
+    border: 1px solid #F9B54A;
+    border-radius: 20px;
+    padding: 20px;
+    width: 100%;
+    height: 500px;
+}
+.text-message {
+    background: white;
+    color: black;
+    border-radius: 100px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 40px;
+    padding-top: 10px;
+    height: 80px;
+}
+/*------------------Start------------------*/
+/*Profile stylesheet*/
+.profile-holder {
+    display: flex;
+    margin-top: 50px;
+}
+.column1 {
+    flex: 1;
+}
+.column2 {
+    flex: 1;
+}
+.close-button {
+    background: none;
+    border: none;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 0;
+    height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.profile-card {
+    border: 1px solid #F9B54A;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    margin:auto;
+    width: 70%;
+}
+.profile-logo-img{
+    width: 100px;
+    height: auto;
+}
+.profile-user-img{
+    width: 150px;
+    height: 150px;
+}
+.upload-img-btn {
+    text-decoration: none;
+    border: 1px solid #F9B54A;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+}
+    .upload-img-btn:hover {
+        color: grey;
+        border: 1px solid grey;
+        cursor: pointer;
+    }
+.profile-setting {
+    border: 1px solid #F9B54A;
+    border-radius: 10px;
+    padding: 10px;
+    width: 70%;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+input:read-only {
+    background-color: transparent; /* Change the background color */
+    color: #666; /* Change the text color */
+    cursor: auto; /* Change the cursor to not-allowed */
+    border: 1px solid transparent; /* Add a border */
+    outline: none;
+}
+.profile-details {
+    border: 1px solid #F9B54A;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.col2, .col3, .col5 {
+    display: flex;
+}
+.col6 {
+    margin-top: 10px;
+}
+.editButton, .saveButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.saveButton {
+    background-color: green;
+    color: white;
+}
+/*------------------End------------------*/
+
+/*------------------Start------------------*/
+/*HiveUser stylesheet*/
+.hiveuser {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.hiveuser-items, .hiveuser-content{
+    display: flex;
+    gap: 3rem;
+}
+.item-active {
+    color: #313538;
+    background: #F9B54A;
+    text-decoration: none;
+    font-size: 2em;
+    margin-left: 30px;
+    padding: 0px 20px 8px 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+    .item-active:hover {
+        color: #313538;
+    }
+.item-notactive {
+    text-decoration: none;
+    color: white;
+    font-size: 2em;
+    margin-left: 30px;
+    padding: 0px 20px 8px 20px;
+}
+    .item-notactive:hover {
+        color: white;
+    }
+.content-items {
+    text-decoration: none;
+    font-size: 1em;
+    color: white;
+}
+    .content-items:hover {
+        color: white;
+        text-decoration: underline;
+    }
+
+.search-border {
+    border: 1px solid;
+    border-radius: 25px;
+    padding: 0px 10px 0px 5px;
+    width: 250px;
+}
+.search-input {
+    height: 30px;
+    padding: 10px;
+    background: none;
+    border:none;
+    outline:none;
+    color:white;
+}
+.search-button, .more-button, pop-close {
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+.search-logo{
+    width: 20px;
+}
+.more-logo {
+    width: 20px;
+    margin-left: 30px;
+}
+.popup-button{
+    text-decoration: none;
+    display: inline-block;
+}
+.action-button{
+    display: none ;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+    .action-button:target{
+        display: block;
+    }
+
+.action-content {
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 20px;
+    width: 400px;
+    height: 25%;
+    background: rgba(246,186,77, 0.2);
+}
+
+.popup-header, .account-header {
+    display: flex;
+}
+.popup-close {
+    position: absolute;
+    width: 30px;
+    margin-left: 20px;
+    font-size: 24px;
+    text-decoration: none;
+    right: 37%;
+}
+.action-item {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.action-item a{
+    padding: 5px;
+    border: none;
+    background: none;
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    align-content: center;
+}
+    .action-item a:hover {
+        text-align: center;
+        color: white;
+        background: rgb(246,186,77);
+    }
+.account-button {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+    .account-button:target {
+        display: block;
+    }
+.account-content {
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 20px;
+    width: 60%;
+    height: 65%;
+    background: #313538;
+    border: 1px solid #F9B54A;
+}
+.account-close {
+    position: absolute;
+    width: 30px;
+    margin-left: 20px;
+    font-size: 24px;
+    text-decoration: none;
+    right: 22%;
+}
+.details-col{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 10rem;
+    width: 100%;
+    height: 100%;
+}
+.details-col a{
+    margin-top: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    font-size: 1.5em;
+    color: white;
+    border: 1px solid;
+    border-radius: 50px;
+}
+.account-text, .account-flex {
+    display: flex;
+}
+    .account-text h6 {
+        display: flex;
+        justify-content: start;
+        text-align: left;
+        width: 100%;
+        padding: 1px;
+    }
+.id-img{
+    width: 50%;
+}
+.popup-show-button {
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid;
+    border-radius: 20px;
+    padding: 0px 20px 0px 20px;
+    border-color: #F9B54A;
+    color: #F9B54A;
+}
+    .popup-show-button:hover {
+        color: white;
+        background: rgba(246,186,77, 0.2);
+    }
+.link-col {
+    display: flex;
+    flex-direction:column;
+}
+
+    .link-col a {
+        margin-top: 20px;
+        padding: 10px 20px 10px 20px;
+        text-decoration: none;
+        font-size: 1.5em;
+        color: white;
+        border: 1px solid;
+        border-radius: 50px;
+    }
+.verified-id{
+    width: 15%;
+    margin-left: 10px;
+}
+.verified-account-text{
+    display:flex;
+    gap: 1rem;
+}
+.verified-user{
+    display: flex;
+}
+.verified-user h6{
+    margin-top: 25px;
+}
+.back-close-botton {
+    position: absolute;
+    width: 30px;
+    margin-left: 20px;
+    font-size: 24px;
+    text-decoration: none;
+    right: 13%;
+}
+/*------------------End------------------*/

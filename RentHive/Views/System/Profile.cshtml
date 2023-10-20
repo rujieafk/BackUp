@@ -1,0 +1,144 @@
+﻿@model RentHive.Models.userLogin
+@{
+    ViewData["Title"] = "Profile";
+}
+<div>
+    <button class="close-button" onclick="location.href='@Url.Action("Index", "Home", new {userId = Model.Acc_id, userEmail = Model.Acc_Email, userType = Model.Acc_UserType})'">
+        <img class="notification-icon" src="~/image/close.png" alt="Close">
+    </button>
+
+</div>
+<div class="profile-holder">
+    <div class="column1">
+        <div class="profile-card">
+            <img src="~/image/logo_name.png" class="profile-logo-img" />
+            <h2>@Model.Acc_FirstName @Model.Acc_MiddleName @Model.Acc_LastName</h2>
+            <p>@ViewBag.userEmail</p>
+            <img src="~/image/user.png" class="profile-user-img" />
+            <p>@Model.Acc_UserType</p>
+            <a class="upload-img-btn">Browse Files</a>
+        </div>
+        <div class="profile-setting">
+            <h3>Settings</h3>
+            @* <div><a class="a_button" onclick="location.href='@Url.Action("Delete", "System",new { TempuserId = Model.Acc_id})'">Delete Account</a></div> *@
+            <div><a class="a_button" asp-controller="System" asp-action="Delete" asp-route-TempuserId="@Model.Acc_id">Delete Account</a></div>
+            <div><a class="a_button" asp-controller="Account" asp-action="Logout" asp-route-TempuserId="@Model.Acc_id,@Model.Acc_Email,@Model.Acc_UserType">Logout</a></div>
+            <div><a class="a_button" asp-controller="Account" asp-action="Signup">Register Now</a></div>
+        </div>
+    </div>
+    <div class="column2">
+        <div class="profile-details">
+            <form asp-action="Profile" method="post">
+                <h3>Account Details</h3>
+
+                <input type="hidden" name="Acc_id" value="@Model.Acc_id" />
+
+                <div class="col1">
+                    <h5>Display Name</h5>
+                    <input id="userDisplayName" name="Acc_DisplayName" value="@Model.Acc_DisplayName" class="textinput" readonly/>
+                </div>
+
+                <div class="col2">
+                    <div>
+                        <h5>First Name</h5>
+                        <input id="userFirstName" name="Acc_FirstName" value="@Model.Acc_FirstName" class="textinput" readonly />
+                    </div>
+                    <div>
+                        <h5>Middle Name</h5>
+                        <input id="userMiddleName" name="Acc_MiddleName" value="@Model.Acc_MiddleName" class="textinput" readonly />
+                    </div>
+                    <div>
+                        <h5>Last Name @ViewBag.userlastname</h5>
+                        <input id="userLastName" name="Acc_LastName" value="@Model.Acc_LastName" class="textinput" readonly />
+                    </div>
+                </div>
+
+                <div class="col3">
+                    <div>
+                        <h5>Contact Number @ViewBag.usercontact</h5>
+                        <input id="userPhoneNum" name="Acc_PhoneNum" value="@Model.Acc_PhoneNum" class="textinput" readonly />
+                    </div>
+                    <div>
+                        <h5>Birthdate @ViewBag.userbirthdate</h5>
+                        <input id="userBirthDate" name="Acc_Birthdate" value="@Model.Acc_Birthdate" class="textinput" readonly />
+                    </div>
+                    <div>
+                        <h5>Address @ViewBag.useraddress</h5>
+                        <input id="userAddress" name="Acc_Address" value="@Model.Acc_Address" class="textinput" readonly />
+                    </div>
+                </div>
+                <div>
+                    <h5>Email</h5>
+                    <input asp-for="Acc_Email" class="textinput" readonly />
+                </div>
+                <div>
+                    <h5>Password</h5>
+                    <input asp-for="Acc_Password" class="textinput" readonly />
+                </div>
+                <div>
+                    <button type="button" class="editButton">Edit</button>
+                    <button type="submit" class="saveButton" style="display: none">Save Changes</button>
+                </div>
+            </form>
+        </div>
+        @* <div class="profile-details">
+            <h3>Account Details</h3>
+            <h5>Display Name</h5>
+            <div class="col1">
+                <input  name="Acc_id" type="text" class="textinput" value="@Model.Acc_id" style="display: none;" />
+            </div>
+            <div class="col1">
+                <input  name="Acc_DisplayName" type="text" class="textinput" value="@Model.Acc_DisplayName" disabled />
+            </div>
+            <div class="col2">
+                <div>
+                    <h5>Firstname</h5>
+                    <input  name="Acc_FirstName" type="text" class="textinput" value="@Model.Acc_FirstName" disabled />
+                </div>
+                <div>
+                    <h5>Middlename</h5>
+                    <input  name="Acc_MiddleName" type="text" class="textinput" value="@Model.Acc_MiddleName" disabled />
+                </div>
+                <div>
+                    <h5>Lastname</h5>
+                    <input  name="Acc_LastName" type="text" class="textinput" value="@Model.Acc_LastName" disabled />
+                </div>
+            </div>
+
+            <div class="col3">
+                <div>
+                    <h5>Contact Number</h5>
+                    <input  name="Acc_PhoneNum" type="text" class="textinput" value="@Model.Acc_PhoneNum" disabled />
+                </div>
+                <div>
+                    <h5>Birthdate</h5>
+                    <input  name="Acc_Birthdate" type="text" class="textinput" value="@Model.Acc_Birthdate" disabled />
+                </div>
+            </div>
+            <div class="col4">
+                <div>
+                    <h5>Address</h5>
+                    <input  name="Acc_Address" type="text" class="textinput" value="@Model.Acc_Address" disabled />
+                </div>
+            </div>
+
+            <div class="col5">
+                <div>
+                    <h5>Email Address</h5>
+                    <input type="text" class="" value="@Model.Acc_Email" disabled />
+                </div>
+                <div>
+                    <h5>Password</h5>
+                    <input type="password" class="" value="@Model.Acc_Password" disabled />
+                </div>
+            </div>
+            <div class="col6">
+                <button class="editButton">Edit</button>
+                <form method="post" asp-action="Profile">
+                    <input type="hidden" name="updateTempuserId" value="@Model.Acc_id" />
+                    <button type="submit" class="saveButton" style="display: none;">Save Changes</button>
+                </form>
+            </div>
+        </div> *@
+    </div>
+</div>

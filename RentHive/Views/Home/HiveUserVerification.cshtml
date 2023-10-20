@@ -1,0 +1,125 @@
+﻿@{
+    ViewData["Title"] = "RentHive Users";
+}
+<div>
+    <div class="side-nav">
+        <div class="user">
+            <a href="@Url.Action("Profile", "System")">
+                <img src="~/image/user.png" class="user-img" />
+            </a>
+            <div class="text-name">
+                <h2>John Doe</h2>
+                <p>user@gmail.com</p>
+            </div>
+        </div>
+        <ul class="menu-list">
+            <li class="menu-item"><img class="menu-icon" src="~/image/dashboard.png" /><a asp-controller="Home" asp-action="Index" class="menu-text">Dashboard</a></li>
+            <li class="menu-item"><img class="menu-icon" src="~/image/file.png" /><a asp-controller="Home" asp-action="Report" class="menu-text">Reports</a></li>
+            <li class="menu-item-active"><img class="menu-icon" src="~/image/group.png" /><a asp-controller="Home" asp-action="HiveUser" class="menu-text">User</a></li>
+            <li class="menu-item"><img class="menu-icon" src="~/image/rent.png" /><a asp-controller="Home" asp-action="RentalServices" class="menu-text">Rental Servies</a></li>
+        </ul>
+        <ul class="menu-list">
+            <li class="menu-item"><img class="menu-icon" src="~/image/logout.png" /><a asp-controller="Home" asp-action="Login" class="menu-text">Logout</a></li>
+        </ul>
+    </div>
+    <div>
+        <button class="notification-button" onclick="location.href='@Url.Action("Notification","System")'"><img class="notification-icon" src="~/image/bell.png"></button>
+    </div>
+</div>
+<div class="hiveuser">
+    <div class="hiveuser-items">
+        <a asp-controller="Home" asp-action="HiveUserVerification" class="item-active">User Verification</a>
+        <a asp-controller="Home" asp-action="HiveUserList" class="item-notactive">User List</a>
+    </div>
+    <div class="hiveuser-border">
+        <div class="hiveuser-content">
+            <a href="" class="content-items">All User</a>
+            <a href="" class="content-items">Pending</a>
+            <a href="" class="content-items">Denied</a>
+            <div class="search-border">
+                <input class="search-input" type="text" placeholder="Type here...">
+                <button class="search-button"><img src="~/image/search.png" class="search-logo" /></button>
+            </div>
+        </div>
+        <div class="hiveuser-header-item">
+            <h5>ID</h5>
+            <h5>Name</h5>
+            <h5>Date</h5>
+            <h5>Status</h5>
+            <h5>Request</h5>
+        </div>
+        <div class="hiveuser-message">
+            <p>000011</p>
+            <p>Martin Prince</p>
+            <p>01-11-23</p>
+            <p>Pending</p>
+            <p>
+                <a href="#popup" class="popup-button">
+                    <img src="~/image/more.png" class="more-logo" />
+                </a>
+            </p>
+            <div id="popup" class="action-button">
+                <div class="action-content">
+                    <div class="popup-header">
+                        <h5>Request</h5>
+                        <a href="#"><img src="~/image/close.png" class="popup-close" /></a>
+                    </div>
+                    <p class="action-item">
+                        <a href="#">Approved</a>
+                        <a href="#">Unapproved</a>
+                        <a href="#accountdetail" class="popup-button">Open Full Details</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="accountdetail" class="account-button">
+            <div class="account-content">
+                <div class="account-header">
+                    <h1>Account Details:</h1>
+                    <a href="#"><img src="~/image/close.png" class="account-close" /></a>
+                </div>
+                <div>
+                    <div class="account-flex">
+                        <div style="width: 50%;">
+                            <div class="account-text">
+                                <h6>ID Number: </h6>
+                                <h6>000011</h6>
+                            </div>
+                            <div class="account-text">
+                                <h6>Firstname: </h6>
+                                <h6>Martin</h6>
+                            </div>
+                            <div class="account-text">
+                                <h6>Middle: </h6>
+                                <h6></h6>
+                            </div>
+                            <div class="account-text">
+                                <h6>Lastname: </h6>
+                                <h6>Prince</h6>
+                            </div>
+                            <div class="account-text">
+                                <h6>Contact Number: </h6>
+                                <h6>09123456789</h6>
+                            </div>
+                            <div class="account-text">
+                                <h6>Address: </h6>
+                                <h6>John Doe Street</h6>
+                            </div>
+                            <div class="account-text">
+                                <h6>Email: </h6>
+                                <h6>johndoe123@gmail.com</h6>
+                            </div>
+                        </div>
+                        <div class="details-col">
+                            <img class="id-img" src="~/image/id.png" />
+                        </div>
+                    </div>
+                    <div class="details-col">
+                        <a href="">Approved</a>
+                        <a href="">Unapproved</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
